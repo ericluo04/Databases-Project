@@ -1,7 +1,14 @@
 # Databases Project
-The backend implements the api defined in the spec using a Flask Server.
+
 
 Description of files: 
+DATABASE INITIALIZATION:
+* InitDatabaseAll: creates csv file that contains anonymized student records; coordinates are added afterwards
+
+FRONT END:
+* 
+
+BACK END: The backend implements the api defined in the spec using a Flask Server.
 * loader.py: script to read from data csv and upload rows into database 
 * project.py: runs the flask server and sets up routes on port 5000 
 * data.csv: anonymized data used 
