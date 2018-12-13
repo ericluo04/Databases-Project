@@ -7,5 +7,6 @@ class FilterSerializer:
             'classYear': filter.year,
             'college': filter.college,
             'major': filter.major,
-            'birthday': filter.birth_day
+            'birthDay': filter.birth_day,
+            'birthMonth': filter.birth_month
         }

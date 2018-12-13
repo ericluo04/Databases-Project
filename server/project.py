@@ -59,7 +59,7 @@ def people():
     return json.dumps([StudentSerializer().serialize(student) for student in students])
 
 
-@app.route('/filter', methods=['GET', 'POST', 'DELETE'])
+@app.route('/filter', methods=['GET', 'POST'])
 def filter():
     connection = ConnectionManager().get_db_connection()
     if request.method == 'GET':
@@ -77,12 +77,16 @@ def filter():
         ), user_id=request.form['userId'])
 
         return json.dumps({'filterId': filter_id})
-    elif request.method == 'DELETE':
-        UserFilterDAO(connection).delete_filter(
-            UserFilter(user_id=request.form['userId'], filter_id=request.form['filterId']))
-        return json.dumps({'status': "success"})
     else:
         print "wrong http method type"
+
+
+@app.route('/filterDelete', methods=['POST'])
+def filter_delete():
+    connection = ConnectionManager().get_db_connection()
+    UserFilterDAO(connection).delete_filter(
+        UserFilter(user_id=request.form['userId'], filter_id=request.form['filterId']))
+    return json.dumps({'status': "success"})
 
 
 if __name__ == '__main__':
