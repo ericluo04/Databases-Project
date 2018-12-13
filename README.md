@@ -1,12 +1,19 @@
 # Databases Project
 
+Group Members:
+Carlo Abelli - cfa25 
+Michael Hong - mth43
+Lan Luo - ll773
+Abhi Sivaprasad - ass52
 
 Description of files: 
 DATABASE INITIALIZATION:
 * InitDatabaseAll: creates csv file that contains anonymized student records; coordinates are added afterwards
 
 FRONT END:
-* 
+* index.html: the graphical layout of the application
+
+* index.js: the JavaScript that populates the HTML with based on the backend API and handles user actions
 
 BACK END: The backend implements the api defined in the spec using a Flask Server.
 * loader.py: script to read from data csv and upload rows into database 
